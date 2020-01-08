@@ -27,7 +27,7 @@ public class FloristsTest {
 
         /// Tutaj utknąłem
         ShoppingCart wozekJanka = janek.getShoppingCart();
-        System.out.println("Przed płaceniem " + wozekJanka);
+        System.out.println("Przed płaceniem\n " + wozekJanka);
 //
 //        // Teraz za to zapłaci...
 //        janek.pay();

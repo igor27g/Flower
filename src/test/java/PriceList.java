@@ -1,14 +1,22 @@
-import java.util.Map;
+import java.util.HashMap;
 
 public class PriceList {
 
     private static String nazwa;
     private static double cena;
-    public Map<String, Double> productList = null;
+    private volatile static PriceList instance;
+    public HashMap<String, Double> pList = null;
 
-    //Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    public void put(String nazwa, double cena)
+    {
+        this.nazwa = nazwa;
+        this.cena = cena;
+        pList.put(nazwa,cena);
+    }
 
-    private static PriceList instance = null;
+    public PriceList() {
+        pList = new HashMap<String, Double>();
+    }
 
     public static PriceList getInstance()
     {
@@ -19,14 +27,10 @@ public class PriceList {
         return instance;
     }
 
-    public void put(String nazwa, double cena) {
-        this.nazwa = nazwa;
-        this.cena = cena;
-        productList.put(nazwa,cena);
-    }
 
-    public double getCena(String nazwa){
-        return this.productList.get(nazwa);
+    public double getCena(String nazwa)
+    {
+        return this.pList.get(nazwa);
     }
 
 

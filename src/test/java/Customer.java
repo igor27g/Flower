@@ -32,7 +32,7 @@ public class Customer {
 
     public ShoppingCart getShoppingCart()
     {
-        return shoppingCart;
+        return cart;
     }
 
     public float getCash()
